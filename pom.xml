@@ -15,6 +15,61 @@
         <junit.version>4.12</junit.version>
     </properties>
 
+    <developers>
+        <developer>
+            <name>Marcin Białoń</name>
+            <email>marcin@bialon.net</email>
+            <url>http://bialon.net</url>
+        </developer>
+    </developers>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>http://www.opensource.org/licenses/mit-license.php</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <scm>
+        <connection>scm:git:git://github.com/mbialon/dropwizard-metrics-influxdb.git</connection>
+        <developerConnection>scm:git:git@github.com:mbialon/dropwizard-metrics-influxdb.git</developerConnection>
+        <url>https://github.com/mbialon/dropwizard-metrics-influxdb</url>
+        <tag>HEAD</tag>
+    </scm>
+
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/mbialon/dropwizard-metrics-influxdb/issues</url>
+    </issueManagement>
+
+    <ciManagement>
+        <system>Travis CI</system>
+        <url>https://travis-ci.org/mbialon/dropwizard-metrics-influxdb</url>
+    </ciManagement>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.3</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
     <dependencies>
         <dependency>
             <groupId>io.dropwizard</groupId>
@@ -41,4 +96,5 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
 </project>
