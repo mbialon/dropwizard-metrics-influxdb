@@ -6,7 +6,7 @@
 
     <groupId>net.bialon</groupId>
     <artifactId>dropwizard-metrics-influxdb</artifactId>
-    <version>1.0</version>
+    <version>1.1-SNAPSHOT</version>
     <name>Dropwizard Support for InfluxDB</name>
 
     <properties>
