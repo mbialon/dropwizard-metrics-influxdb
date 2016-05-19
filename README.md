@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/mbialon/dropwizard-metrics-influxdb.svg?branch=master)](https://travis-ci.org/mbialon/dropwizard-metrics-influxdb)
 
-I’ve created a [Dropwizard](http://www.dropwizard.io/) Metrics reporter for [InfluxDB](https://influxdb.com/). It supports [Dropwizard](http://www.dropwizard.io/) v0.9.x and [InfluxDB](https://influxdb.com/) v0.8.x.
+I’ve created a [Dropwizard](http://www.dropwizard.io/) Metrics reporter for [InfluxDB](https://influxdb.com/).
 
 ## Usage and configuration:
 
