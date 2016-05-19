@@ -5,8 +5,9 @@ import com.codahale.metrics.ScheduledReporter;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import io.dropwizard.metrics.BaseReporterFactory;
-import metrics_influxdb.InfluxdbHttp;
 import metrics_influxdb.InfluxdbReporter;
+import metrics_influxdb.api.protocols.InfluxdbProtocol;
+import metrics_influxdb.api.protocols.InfluxdbProtocols;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.hibernate.validator.constraints.Range;
 
@@ -102,22 +103,14 @@ public class InfluxDBReporterFactory extends BaseReporterFactory {
     }
 
     public ScheduledReporter build(MetricRegistry registry) {
-        try {
-            InfluxdbHttp influxdb = new InfluxdbHttp(
-                    host,
-                    port,
-                    database,
-                    username,
-                    password);
-            return InfluxdbReporter.forRegistry(registry)
-                    .convertDurationsTo(getDurationUnit())
-                    .convertRatesTo(getRateUnit())
-                    .filter(getFilter())
-                    .prefixedWith(getPrefix())
-                    .skipIdleMetrics(isSkipIdle())
-                    .build(influxdb);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+        InfluxdbProtocol protocol = InfluxdbProtocols.http(host, port, username, password, database);
+        return InfluxdbReporter.forRegistry(registry)
+                .protocol(protocol)
+                .convertDurationsTo(getDurationUnit())
+                .convertRatesTo(getRateUnit())
+                .filter(getFilter())
+                .prefixedWith(getPrefix())
+                .skipIdleMetrics(isSkipIdle())
+                .build();
     }
 }

@@ -11,7 +11,7 @@
 
     <properties>
         <dropwizard.version>0.9.1</dropwizard.version>
-        <metrics-influxdb.version>0.7.0</metrics-influxdb.version>
+        <metrics-influxdb.version>0.8.2</metrics-influxdb.version>
         <junit.version>4.12</junit.version>
     </properties>
 
@@ -77,7 +77,7 @@
             <version>${dropwizard.version}</version>
         </dependency>
         <dependency>
-            <groupId>net.alchim31</groupId>
+            <groupId>com.github.davidb</groupId>
             <artifactId>metrics-influxdb</artifactId>
             <version>${metrics-influxdb.version}</version>
         </dependency>
