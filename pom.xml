@@ -10,7 +10,7 @@
     <name>Dropwizard Support for InfluxDB</name>
 
     <properties>
-        <dropwizard.version>0.9.1</dropwizard.version>
+        <dropwizard.version>2.0.11</dropwizard.version>
         <metrics-influxdb.version>0.8.2</metrics-influxdb.version>
         <junit.version>4.12</junit.version>
     </properties>
